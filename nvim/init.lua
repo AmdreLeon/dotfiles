@@ -1,0 +1,7 @@
+require('plugins')
+require('settings')
+require('keys')
+require('plugins_conf')
+require('lsp_conf')
+require('autocompleter')
+-- require('coc')
