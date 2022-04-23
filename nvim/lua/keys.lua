@@ -49,7 +49,8 @@ nmap("<leader>hh", ":set hlsearch!<CR>")
 nmap("<leader>kc", ":CommentToggle<cr>" )
 vmap("<leader>kc", ":CommentToggle<cr>")
 
-nmap('<C-n>', ":Ex<cr>")
+
+nmap('<F2>', ":NERDTreeToggle %:p <cr>")
 nmap("<leader>t", ":!alacritty --working-directory %:h &<cr>")
 
 nmap("<leader><tab>", ":bn<cr>")

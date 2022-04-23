@@ -26,7 +26,11 @@ Plug 'Yggdroot/indentLine'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'  --k" Temas para airline
 
+--Tabs
 
+
+--nerdTree
+Plug 'preservim/nerdtree'
 --"Autopairs
 Plug 'jiangmiao/auto-pairs'
 
@@ -66,11 +70,5 @@ Plug 'hrsh7th/cmp-nvim-lsp'
 Plug 'onsails/lspkind-nvim'
 -- Snips
 Plug 'SirVer/ultisnips'
-
--- -- Coc
--- vim.cmd[[
--- Plug 'neoclide/coc.nvim', {'branch': 'recease'}
--- ]]
-
 
 vim.call('plug#end')

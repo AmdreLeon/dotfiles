@@ -71,7 +71,8 @@ ZSH_THEME="duellj"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
-	git
+    vi-mode
+    git
     fzf
 	zsh-syntax-highlighting
 	sudo
@@ -81,6 +82,7 @@ plugins=(
 
 source $ZSH/oh-my-zsh.sh
 
+bindkey -v
 # User configuration
 
 # export MANPATH="/usr/local/man:$MANPATH"
@@ -112,9 +114,9 @@ alias ls="ls -la"
 alias gruvbox='~/.local/bin/gruvbox-factory '
 alias cl="clear"
 alias neo="neofetch"
-alias clr='clear'
 alias Jabberwocky="netctl start Jabberwocky"
-alias pcs="pacman -S "
+alias nvimselector="~/scripts/vim-selector.sh"
+
 neofetch --ascii .config/neofetch/ascii.txt --ascii_colors 1
 export EDITOR=nvim
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

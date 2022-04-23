@@ -17,6 +17,9 @@ require'FTerm'.setup({
     },
 })
 
+vim.g.NerdTreeChDirMode = 2
+
+
 vim.cmd[[
     let g:indentLine_fileTypeExclude = ['text', 'sh', 'help', 'terminal']
     let g:indentLine_bufNameExclude = ['NERD_tree.*', 'term:.*']
