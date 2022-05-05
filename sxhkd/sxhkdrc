@@ -1,5 +1,8 @@
 #  ------ programs  -------- # 
 
+super + c 
+		code
+		
 super + Return
 		alacritty
 
@@ -8,9 +11,6 @@ super + space
 
 super + t
 		telegram-desktop
-
-#super + alt + p
-#		networkmanager_dmenu
 
 super + o
 		opera
