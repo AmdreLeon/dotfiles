@@ -62,11 +62,6 @@ nmap('<leader><S-tab>',"bp<cr>")
 --nnoremap <M-h>  :vertical resize -2<CR>
 --nnoremap <M-l>  :vertical resize +2<CR>
 
-vim.cmd ([[
-    au VimEnter * silent! !xmodmap -e 'clear Lock' -e 'keycode 0x42 = Escape'
-    au VimLeave * silent! !xmodmap -e 'clear Lock' -e 'keycode 0x42 = Caps_Lock'
-]])
-
 --Colorizer
 nmap("<leader>ct",":ColorizerToggle<CR>")
 

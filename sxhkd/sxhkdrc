@@ -1,13 +1,13 @@
 #  ------ programs  -------- # 
 
 super + c 
-		code
+		code 
 		
 super + Return
-		alacritty
+		kitty
 
 super + space
-        rofi -show drun
+        rofi -show run
 
 super + t
 		telegram-desktop
@@ -16,27 +16,27 @@ super + o
 		opera
 
 super + e
-		alacritty -e ranger
+		kitty -e ranger
 
 super + x
-	xkill
+	    xkill
 
 super + m
-		alacritty -e cmus	
+		kitty -e cmus	
 # reload config (bspwmrc and sxhkdrc)  # 
 
 super + shift + r
-	pkill -USR1 -x sxhkd
+	    pkill -USR1 -x sxhkd
 
 super + shift + e
 		pcmanfm
 #  ------ brightness  -------- # 
 
-XF86MonBrightnessUp
-    xbacklight -inc 10
+# XF86MonBrightnessUp
+#     xbacklight -inc 10
 
-XF86MonBrightnessDown
-    xbacklight -dec 10
+# XF86MonBrightnessDown
+#     xbacklight -dec 10
 
 #  ------------ bspwm hotkeys ------------ # 
 
@@ -122,12 +122,12 @@ super + ctrl + {h,j,k,l}
 	#bspc node -o 0.{1-9}
 
 # cancel the preselection for the focused node
-super + ctrl + space
-	bspc node -p cancel
+# super + ctrl + space
+# 	bspc node -p cancel
 
-# cancel the preselection for the focused desktop
-super + ctrl + shift + space
-	bspc query -N -d | xargs -I id -n 1 bspc node id -p cancel
+# # cancel the preselection for the focused desktop
+# super + ctrl + shift + space
+# 	bspc query -N -d | xargs -I id -n 1 bspc node id -p cancel
 
 # move/resize
 
@@ -143,20 +143,31 @@ super + alt + shift + {h,j,k,l}
 super + {Left,Down,Up,Right}
 	bspc node -v {-20 0,0 20,0 -20,20 0}
 
+# -------------- Audio options -----------------#
 
+super + alt + Left 
+    cmus-remote --prev
 
+super + alt + Right 
+    cmus-remote --next
+
+super + alt + Down 
+    cmus-remote --pause
+
+super + alt + Up 
+    cmus-remote --stop
 
 # -------------- take screenshots ------------- #
 
 
-#fullscreen screenshot save
+#fullscreen screenshotsave
 
 super + Print
-     maim "/home/$USER/Pictures/$(date)"
+     maim "/home/$USER/Pictures/Screenshots/$(date)"
 
 #cropped save
 super + shift + x
-      maim --select "/home/$USER/Pictures/$(date)"
+      maim --select "/home/$USER/Pictures/Screensshots/$(date)"
 
 #  clipboard fullscreen
 super + u

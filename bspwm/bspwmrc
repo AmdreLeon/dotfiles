@@ -9,16 +9,17 @@
 
 
 # polybar
-pkill dunst; dunst &
-ldm -d -u amdre
-ibus-daemon -drxR
+pkill dunst; dunst & #notificaciones 
+ldm -d -u amdre #automount de dispositivos
+ibus-daemon -drxR #Teclado cambiar etc
 ~/.config/polybar/launch.sh & 
-setxkbmap -layout us   
+# setxkbmap -option caps:swapescape
+setxkbmap -layout us  #layout teclado 
 pkill picom; picom & 
-feh --bg-fill ~/Wallpapers/download.jpeg
-#setxkbmap -layout us,us -variant ,altgr-intl -option grp:lalt_toggle
+feh --bg-fill ~/Pictures/Wallpapers/download.jpeg
 #kpgrep -x sxhkd > /dev/null || sxhkd &
 pkill sxhkd; sxhkd &
+xsetroot -cursor_name left_ptr & #
 
 if xrandr -q | grep 'HDMI-2 connected'; then
 bspc monitor eDP-1 -d I III V VII IX 
@@ -37,7 +38,6 @@ bspc config focus_follows_pointer true
 bspc rule -a Screenkey manage=off
 bspc rule -a Zathura state=tiled
 
-xsetroot -cursor_name left_ptr &
 
 bspc config active_border_color '#928374'
 bspc config normal_border_color '#282828'
