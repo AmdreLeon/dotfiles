@@ -35,7 +35,7 @@ nmap("<leader>rc", ":vs<CR>:Ex ~/.config/nvim<CR>")
 nmap("<leader>p", ":PlugInstall<CR>")
 nmap("<leader>wq", ":wq<CR>")
 nmap("<leader>q", ":q<CR>")
-
+nmap("<leader>ww", "w<CR>")
 nmap("J", "7j")
 nmap("K", "7k")
 
@@ -48,7 +48,6 @@ nmap("<leader>hh", ":set hlsearch!<CR>")
 --Comments
 nmap("<leader>kc", ":CommentToggle<cr>" )
 vmap("<leader>kc", ":CommentToggle<cr>")
-
 
 nmap('<F2>', ":NERDTreeToggle %:p <cr>")
 nmap("<leader>t", ":!alacritty --working-directory %:h &<cr>")
@@ -63,7 +62,7 @@ nmap('<leader><S-tab>',"bp<cr>")
 --nnoremap <M-l>  :vertical resize +2<CR>
 
 --Colorizer
-nmap("<leader>ct",":ColorizerToggle<CR>")
+nmap("<leader>cl",":ColorizerToggle<CR>")
 
 --Fterm
 nmap('<A-i>', '<CMD>lua require("FTerm").toggle()<CR>')
