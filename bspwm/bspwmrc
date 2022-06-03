@@ -15,7 +15,7 @@ ibus-daemon -drxR #Teclado cambiar etc
 # setxkbmap -option caps:swapescape
 setxkbmap -layout us  #layout teclado 
 pkill picom; picom & 
-feh --bg-fill ~/Pictures/Wallpapers/download.jpeg
+feh --bg-fill ~/Pictures/Wallpapers/wall.jpg
 #kpgrep -x sxhkd > /dev/null || sxhkd &
 pkill sxhkd; sxhkd -t 1 &
 xsetroot -cursor_name left_ptr & #
@@ -34,11 +34,11 @@ bspc config borderless_monocle   true
 bspc config gapless_monocle      true
 bspc config focus_follows_pointer true
 
-bspc rule -a Screenkey manage=off
+# bspc rule -a Screenkey manage=off
 bspc rule -a Zathura state=tiled
 
-bspc config single_monocle  true
-bspc config pointer_modifier control
+bspc config single_monocle  false
+# bspc config pointer_modifier control
 
 # bspc config click_to_focus button1 
 # bspc config swallow_first_click true 

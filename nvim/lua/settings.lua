@@ -7,8 +7,7 @@
 
 
 vim.cmd [[
-    colorscheme gruvbox-material
-    
+    colorscheme base16-gruvbox-dark-hard
 ]]
 
 vim.g.gruvbox_material_palette = 'original'

@@ -68,4 +68,14 @@ nmap("<leader>cl",":ColorizerToggle<CR>")
 nmap('<A-i>', '<CMD>lua require("FTerm").toggle()<CR>')
 tmap('<A-i>', '<C-\\><C-n><CMD>lua require("FTerm").toggle()<CR>')
 
+nmap("<leader>fi", ":ALEFix<CR>")
 
+nmap("<leader>ff", ":FZF<CR>")
+nmap("<leader>fg", ":Telescope live_grep<CR>")
+nmap("<leader>fb", ":Telescope buffers<CR>")
+nmap("<leader>fh", ":Telescope help_tags<CR>")
+nmap("<leader>gb", ":Telescope git_branches<CR>")
+
+
+nmap("<leader>gl", ":Flogsplit<CR>")
+nmap("<leader>gg", ":G<CR>")
