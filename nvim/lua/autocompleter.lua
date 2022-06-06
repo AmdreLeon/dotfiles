@@ -1,6 +1,9 @@
 -- Setup nvim-cmp.
+vim.opt.completeopt = "menu,menuone,preview,noselect,noinsert"
 local cmp = require'cmp'
 local lspkind = require("lspkind")
+local cmp_ultisnips_mappings = require("cmp_nvim_ultisnips.mappings")
+local select_opts = {behavior = cmp.SelectBehavior.Select}
 
 cmp.setup({
 	snippet = {
@@ -13,9 +16,37 @@ cmp.setup({
 		end,
 	},
 	mapping = {
-		['<C-b>'] = cmp.mapping(cmp.mapping.scroll_docs(-4), { 'i', 'c' }),
-		['<C-f>'] = cmp.mapping(cmp.mapping.scroll_docs(4), { 'i', 'c' }),
-		['<C-Space>'] = cmp.mapping(cmp.mapping.complete(), { 'i', 'c' }),
+        ["<Tab>"] = cmp.mapping(
+        function(fallback)
+            if cmp.visible() then
+                cmp.confirm({select = true})
+            else
+                fallback()
+            end
+        end,
+          { "i", "s"}),
+        ["<S-Tab>"] = cmp.mapping(
+          function(fallback)
+            cmp_ultisnips_mappings.compose{ "expand", "jump_backwards" }(fallback)
+          end,
+          { "i", "s", }),
+        ["<C-l>"] = cmp.mapping(
+          function(fallback)
+            cmp_ultisnips_mappings.compose{ "expand", "jump_forwards" }(fallback)
+          end,
+          { "i", "s", }),
+        ["<C-h>"] = cmp.mapping(
+          function(fallback)
+            cmp_ultisnips_mappings.compose{ "expand", "jump_backwards" }(fallback)
+          end,
+          { "i", "s", }),
+		['<C-b>'] = cmp.mapping(cmp.mapping.scroll_docs(-4), { 'i', 's' }),
+		['<C-f>'] = cmp.mapping(cmp.mapping.scroll_docs(4), { 'i', 's' }),
+		['<C-Space>'] = cmp.mapping(cmp.mapping.complete(), { 'i', 's' }),
+        ['<Up>'] = cmp.mapping(cmp.mapping.select_prev_item({ select_opts }), {'i', 's'}),
+        ['<Down>'] = cmp.mapping(cmp.mapping.select_next_item({select_opts }), {'i', 's'}),
+        ['<C-j>'] = cmp.mapping(cmp.mapping.select_next_item({ select_opts }), {'i', 's'}),
+        ['<C-k>'] = cmp.mapping(cmp.mapping.select_prev_item({select_opts}), {'i', 's'}),
 		['<C-y>'] = cmp.config.disable, -- Specify `cmp.config.disable` if you want to remove the default `<C-y>` mapping.
 		['<C-e>'] = cmp.mapping({
 			i = cmp.mapping.abort(),
@@ -29,6 +60,7 @@ cmp.setup({
 		-- { name = 'luasnip' }, -- For luasnip users.
 		{ name = 'ultisnips' }, -- For ultisnips users.
 		-- { name = 'snippy' }, -- For snippy users.
+        { name = 'path' },
 	}, {
 		{ name = 'buffer' },
 	}),
@@ -40,4 +72,3 @@ cmp.setup({
 	}
 })
 --}
---

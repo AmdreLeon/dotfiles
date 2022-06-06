@@ -1,4 +1,6 @@
 #  ------ programs  -------- # 
+F12
+        Mechvibes
 
 super + c 
 		code 
@@ -7,7 +9,8 @@ super + Return
 		kitty
 
 super + space
-        rofi -show run
+        dmenu_run
+        # rofi -show run
 
 super + t
 		telegram-desktop
@@ -29,14 +32,25 @@ super + shift + r
 
 super + shift + e
 		pcmanfm
+
 #  ------ brightness  -------- # 
 
-# XF86MonBrightnessUp
-#     xbacklight -inc 10
+XF86MonBrightnessUp
+    xbacklight -inc 10
 
-# XF86MonBrightnessDown
-#     xbacklight -dec 10
+XF86MonBrightnessDown
+    xbacklight -dec 10
 
+#  ------------ Audio Control ------------ # 
+
+XF86AudioRaiseVolume
+    amixer -q sset Master 5%+
+
+XF86AudioLowerVolume
+    amixer -q sset Master 5%-
+
+XF86AudioMute
+    amixer set Master toggle
 #  ------------ bspwm hotkeys ------------ # 
 
 # quit/restart bspwm
@@ -145,18 +159,21 @@ super + ctrl + {h,j,k,l}
 # move/resize
 
 # expand a window by moving one of its side outward
-super + {Left,Down,Up,Right}
+super + shift +j {Left,Down,Up,Right}
 	bspc node -z {left -20 0,bottom 0 20,top 0 -20,right 20 0}
 
 # contract a window by moving one of its side inward
-super + shift + {Left,Down,Up,Right}
+super + ctrl + {Left,Down,Up,Right}
 	bspc node -z {right -20 0,top 0 20,bottom 0 -20,left 20 0}
 
 # move a floating window
-super + ctrl +{Left,Down,Up,Right}
+super +{Left,Down,Up,Right}
 	bspc node -v {-20 0,0 20,0 -20,20 0}
 
-# -------------- Audio options -----------------#
+# -------------- Music options -----------------#
+
+XF86AudioPrev
+    cmus-remote --prev
 
 super + alt + Left 
     cmus-remote --prev
@@ -164,31 +181,40 @@ super + alt + Left
 super + alt + Right 
     cmus-remote --next
 
+XF86AudioNext
+    cmus-remote --next
+
 super + alt + Down 
+    cmus-remote --pause
+
+XF86AudioPlay
     cmus-remote --pause
 
 super + alt + Up 
     cmus-remote --stop
 
+XF86AudioStop
+    cmus-remote --stop
+
 # -------------- take screenshots ------------- #
 
 
-#fullscreen screenshotsave
 
+#fullscreen screenshotsave
 super + Print
      maim "/home/$USER/Pictures/Screenshots/$(date)"
 
 #cropped save
-super + shift + x
-      maim --select "/home/$USER/Pictures/Screensshots/$(date)"
+super + shift + Print 
+      maim --select "/home/$USER/Pictures/Screenshots/$(date)"
 
-#  clipboard fullscreen
+#  clipboard fulliisdalfjsdfscreen
 super + u
      maim | xclip -selection clipboard -t image/png
 
 # clipboard cropped
 super + shift + u
-    maim --select | xclip -selection clipboard -t image/png
+    maim --select  | xclip -selection clipboard -t image/png
 
 
 

@@ -1,4 +1,8 @@
 # BEGIN_KITTY_THEME
-# Gruvbox Dark Hard
+# Gruvbox Dark
 include current-theme.conf
+font_family      Iosevka term
+bold_font        auto
+italic_font      auto
+bold_italic_font auto
 # END_KITTY_THEME

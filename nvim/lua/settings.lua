@@ -43,13 +43,14 @@ vim.opt.hidden = true
 
 vim.opt.syntax = 'on'
 
+-- vim.opt.completeopt = "menu,menuone"
 --vim.cmd [[
 --  filetype off
 --  filetype plugin indent on
 --  autocmd BufWinEnter,WinEnter term://* startinsert
 --]]
 
---Airline 
+--Airline
 
 vim.cmd[[
     let g:airline#extensions#tabline#enable = 1
