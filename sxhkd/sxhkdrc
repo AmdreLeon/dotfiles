@@ -1,5 +1,5 @@
 #  ------ programs  -------- # 
-F12
+sulper + F12
         Mechvibes
 
 super + c 
@@ -8,9 +8,16 @@ super + c
 super + Return
 		kitty
 
+super + shift + Return
+        bspc rule -a kitty -o state=floating rectangle=800x500+100+100 sticky=on && kitty 
+        bspc -r kitty
+        
 super + space
         dmenu_run
         # rofi -show run
+
+super + shift + space
+        dmenu
 
 super + t
 		telegram-desktop

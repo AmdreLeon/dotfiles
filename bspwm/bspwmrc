@@ -9,13 +9,13 @@
 
 # polybar
 pkill dunst; dunst & #notificaciones 
-ldm -d -u amdre #automount de dispositivos
+sudo ldm -d -u amdre #automount de dispositivos
 ibus-daemon -drxR #Teclado cambiar etc
 ~/.config/polybar/launch.sh & 
-setxkbmap -option caps:swapescape
+# setxkbmap -option caps:swapescape
 setxkbmap -layout us  #layout teclado 
 pkill picom; picom & 
-feh --bg-fill ~/Pictures/wallpapersden.com_darth-vader-4k_2560x1440.jpg
+feh --bg-fill ~/Pictures/Wallpapers/wallpaperflare.com_wallpaper.jpg
 #kpgrep -x sxhkd > /dev/null || sxhkd &
 pkill sxhkd; sxhkd -t 1 &
 xsetroot -cursor_name left_ptr & #

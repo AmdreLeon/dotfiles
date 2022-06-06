@@ -75,18 +75,12 @@ vim.cmd[[Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}]]
 
 --"git
 Plug 'airblade/vim-gitgutter'
-    
 
 Plug 'xiyaowong/nvim-cursorword' --" highlight current word
 Plug 'lukas-reineke/indent-blankline.nvim'
 
 -- Colors
 Plug 'norcalli/nvim-colorizer.lua'
-
--- Black
--- vim.cmd[[
---     Plug 'averms/black-nvim', {'do': ':UpdateRemotePlugins'}
--- ]]
 
 ---- LSP
 Plug 'neovim/nvim-lsp'
@@ -96,19 +90,20 @@ Plug 'lukas-reineke/lsp-format.nvim'
 Plug 'hrsh7th/nvim-cmp'
 Plug 'hrsh7th/cmp-nvim-lsp'
 Plug 'hrsh7th/cmp-path'
-Plug 'onsails/lspkind-nvim'
 
+---- Null-ls
+Plug 'jose-elias-alvarez/null-ls.nvim'
+---- Snippets
 Plug "quangnguyen30192/cmp-nvim-ultisnips"
 Plug 'thomasfaingnaert/vim-lsp-ultisnips' -- LSP snippets integration for SirVer ultisnip
--- -- Plug "rafamadriz/friendly-snippets" -- Some snippets
--- -- Plug 'L3MON4D3/LuaSnip' -- Snippet engine written in Lua
 Plug 'SirVer/ultisnips'			-- Snippet engine written in vimscript
 Plug 'honza/vim-snippets'		-- Some snippets
 
-Plug 'dense-analysis/ale'		-- Linter
-
+-- Plug 'dense-analysis/ale'		-- Linter
+-- Icon Pack
+Plug 'onsails/lspkind-nvim'					-- Add icons to LSP completion
 Plug 'kyazdani42/nvim-web-devicons'
-
+-- Git
 Plug 'tpope/vim-fugitive'		-- Git
 Plug 'rbong/vim-flog'
 

@@ -78,7 +78,7 @@ nmap("<leader>ct", ":ColorizerToggle<CR>")
 nmap('<A-i>', '<CMD>lua require("FTerm").toggle()<CR>')
 tmap('<A-i>', '<C-\\><C-n><CMD>lua require("FTerm").toggle()<CR>')
 
-nmap("<leader>fi", ":ALEFix<CR>")
+nmap("<leader>fi", ": <CR>")
 
 nmap("<leader>ff", ":FZF<CR>")
 nmap("<leader>fg", ":Telescope live_grep<CR>")

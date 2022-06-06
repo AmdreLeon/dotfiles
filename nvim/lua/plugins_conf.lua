@@ -1,5 +1,6 @@
 local cmd = vim.cmd
 
+--#region Treesiter
 require'nvim-treesitter.configs'.setup {
   highlight = {
     enable = true,
@@ -10,11 +11,14 @@ require'nvim-treesitter.configs'.setup {
     additional_vim_regex_highlighting = false,
   },
 }
+--#endregion
 
+--#region FZF and telescope
 vim.g.fzf_layout = { window = { width = 0.8, height = 0.8 } }
 require('telescope').setup{ defaults = { file_ignore_patterns = {".git"} } }
+--#endregion
 
--- Lualine
+--#region LuaLine
 require('lualine').setup {
   options = {
     icons_enabled = true,
@@ -44,7 +48,9 @@ require('lualine').setup {
   tabline = {},
   extensions = { 'fzf', 'fugitive' }
 }
+--#endregion
 
+--#region ALE
 cmd [[ autocmd FileType python :normal zR ]]
 vim.g.ale_python_executable = "python"
 vim.g.ale_python_pylint_use_global = 1
@@ -57,7 +63,9 @@ cmd [[ let g:ale_python_isort_options = '--profile black' ]]
 cmd [[ highlight ALEWarning ctermfg=none cterm=underline ]]
 cmd [[ highlight ALEErrorSign ctermbg=none ]]
 cmd [[ highlight ALEWarningSign ctermbg=none ]]
+--#endregion
 
+--#region Fterm
 require'FTerm'.setup({
     border = 'double',
     dimensions  = {
@@ -65,14 +73,42 @@ require'FTerm'.setup({
         width = 0.9,
     },
 })
+--#endregion
 
+--#region NerdTree
 vim.g.NerdTreeChDirMode = 2
-
 
 vim.cmd[[
     let g:indentLine_fileTypeExclude = ['text', 'sh', 'help', 'terminal']
     let g:indentLine_bufNameExclude = ['NERD_tree.*', 'term:.*']
 ]]
+--#endregion 
 
+--#region bufferline
 require("bufferline").setup{
 }
+--#endregion
+
+--#region Null-ls
+local status_ok, null_ls = pcall(require, 'null-ls')
+
+if not status_ok then
+  return
+end
+
+null_ls.setup ({
+  default_timeout = 20000,
+  fallback_severity = vim.diagnostic.severity.INFO,
+  sources = {
+	-- //\\// Python //\\//
+	null_ls.builtins.diagnostics.pylint,
+	null_ls.builtins.diagnostics.mypy,
+	null_ls.builtins.formatting.black,
+	null_ls.builtins.formatting.isort.with({
+		args = { "--stdout", "--filename", "$FILENAME", "-" , "--profile", "black"}
+	  }),
+
+      -- gofmt
+    null_ls.builtins.formatting.gofmt
+  }
+})
