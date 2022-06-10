@@ -24,8 +24,9 @@ require('lualine').setup {
     icons_enabled = true,
     theme = 'auto',
     component_separators = { left = '', right = ''},
-    section_separators = { left = '', right = ''},
-    disabled_filetypes = {},
+    section_separators = { left = '', right = ''},
+    disabled_filetypes = {'neo-tree', 'Outline'},
+    disabled_buftypes = {},
     always_divide_middle = true,
     globalstatus = false,
   },
@@ -51,18 +52,18 @@ require('lualine').setup {
 --#endregion
 
 --#region ALE
-cmd [[ autocmd FileType python :normal zR ]]
-vim.g.ale_python_executable = "python"
-vim.g.ale_python_pylint_use_global = 1
-cmd [[ let g:ale_python_isort_use_global = 1 ]]
-cmd [[ let g:ale_linters={ 'python': ['pylint'] } ]]
--- cmd [[ let g:ale_linters={ 'go': ['gofmt'] } ]]
-cmd [[ let g:ale_fixers = { 'python': ['black', 'isort'] } ]]
--- cmd [[ let g:ale_fixers = { 'go': ['gofmt'] } ]]
-cmd [[ let g:ale_python_isort_options = '--profile black' ]]
-cmd [[ highlight ALEWarning ctermfg=none cterm=underline ]]
-cmd [[ highlight ALEErrorSign ctermbg=none ]]
-cmd [[ highlight ALEWarningSign ctermbg=none ]]
+-- cmd [[ autocmd FileType python :normal zR ]]
+-- vim.g.ale_python_executable = "python"
+-- vim.g.ale_python_pylint_use_global = 1
+-- cmd [[ let g:ale_python_isort_use_global = 1 ]]
+-- cmd [[ let g:ale_linters={ 'python': ['pylint'] } ]]
+-- -- cmd [[ let g:ale_linters={ 'go': ['gofmt'] } ]]
+-- cmd [[ let g:ale_fixers = { 'python': ['black', 'isort'] } ]]
+-- -- cmd [[ let g:ale_fixers = { 'go': ['gofmt'] } ]]
+-- cmd [[ let g:ale_python_isort_options = '--profile black' ]]
+-- cmd [[ highlight ALEWarning ctermfg=none cterm=underline ]]
+-- cmd [[ highlight ALEErrorSign ctermbg=none ]]
+-- cmd [[ highlight ALEWarningSign ctermbg=none ]]
 --#endregion
 
 --#region Fterm
@@ -80,12 +81,25 @@ vim.g.NerdTreeChDirMode = 2
 
 vim.cmd[[
     let g:indentLine_fileTypeExclude = ['text', 'sh', 'help', 'terminal']
-    let g:indentLine_bufNameExclude = ['NERD_tree.*', 'term:.*']
+    let g:indentLine_bufNameExclude = ['NERD_tree.*', 'term:.*', 'neo-tree.*']
 ]]
 --#endregion 
 
 --#region bufferline
-require("bufferline").setup{
+require "bufferline".setup {
+    options = {
+        offsets = {
+            { filetype = "neo-tree", text = '', padding = 1 },
+            { filetype = "nerdtree", text = '', padding = 1 }
+        },
+        buffer_close_icon = "",
+        modified_icon = "",
+        close_icon = "",
+        max_name_length = 14,
+        max_prefix_length = 13,
+        tab_size = 20,
+        separator_style = "thin",
+    }
 }
 --#endregion
 
@@ -112,3 +126,29 @@ null_ls.setup ({
     null_ls.builtins.formatting.gofmt
   }
 })
+--#endregion
+
+--#region Smarts splits
+require('smart-splits').setup({
+  ignored_filetypes = {
+    'nofile',
+    'quickfix',
+    'prompt',
+  },
+  ignored_buftypes = { 'NvimTree', 'NERDtree', 'nofile' },
+  move_cursor_same_row = false,
+  resize_mode_quit_key = '<ESC>',
+  resize_mode_silent = false,
+})
+--#endregion
+
+--#region 
+require('indent_blankline').setup {
+    show_current_context = true,
+    -- show_current_context_start = true,
+}
+--#endregion
+
+--#region which-key
+
+--#endregion

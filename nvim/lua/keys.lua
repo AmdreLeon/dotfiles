@@ -10,6 +10,7 @@
 
 vim.g.mapleader = ' '
 
+
 local function map(mode, shortcut, command)
     vim.api.nvim_set_keymap(mode, shortcut, command, { noremap = true })
 end
@@ -36,6 +37,7 @@ nmap("<leader>p", ":PlugInstall<CR>")
 nmap("<leader>wq", ":wq<CR>")
 nmap("<leader>q", ":q!<CR>")
 nmap("<leader>ww", ":w<CR>")
+nmap("<leader>QQ", ":quitall<CR>")
 nmap("J", "7jzz")
 nmap("K", "7kzz")
 
@@ -45,23 +47,37 @@ nmap("#", ":set hlsearch<CR>#")
 nmap("*", ":set hlsearch<CR>*")
 nmap("<leader>hh", ":set hlsearch!<CR>")
 
-nmap("<leader>n", ":NERDTreeFocus<CR>")
+-- NERDtree
+-- nmap('<F2>', ":NERDTreeToggle %:p <cr>")
+-- nmap("<leader>n", ":NERDTreeFocus<CR>")
+
+-- Neo-tree
+map("n", "<F2>", "<cmd>Neotree toggle<cr>" )
+map("n", "<leader>n", "<cmd>Neotree focus<cr>")
+
 --Comments
 nmap("<leader>kc", ":CommentToggle<cr>")
 vmap("<leader>kc", ":CommentToggle<cr>")
 
-nmap('<F2>', ":NERDTreeToggle %:p <cr>")
-nmap("<leader>t", ":!kitty --working-directory %:h &<cr>")
+nmap("<leader>ot", ":!kitty --working-directory %:p:h &<cr>")
 
 nmap("<leader><tab>", ":bn<cr>")
 nmap('<leader><S-tab>', ":bp<cr>")
 
-
+vim.keymap.set('n', '<C-h>', require('smart-splits').resize_left)
+vim.keymap.set('n', '<C-j>', require('smart-splits').resize_down)
+vim.keymap.set('n', '<C-k>', require('smart-splits').resize_up)
+vim.keymap.set('n', '<C-l>', require('smart-splits').resize_right)
+-- moving between splits
+vim.keymap.set('n', '<A-h>', require('smart-splits').move_cursor_left)
+vim.keymap.set('n', '<A-j>', require('smart-splits').move_cursor_down)
+vim.keymap.set('n', '<A-k>', require('smart-splits').move_cursor_up)
+vim.keymap.set('n', '<A-l>', require('smart-splits').move_cursor_right)
 --" Use alt + hjkl to resize windows
-nmap("<M-j>", ":resize -2<CR>")
-nmap("<M-k>", ":resize +2<CR>")
-nmap("<M-h>", ":vertical resize -2<CR>")
-nmap("<M-l>", ":vertical resize +2<CR>")
+-- nmap("<M-j>", ":resize -2<CR>")
+-- nmap("<M-k>", ":resize +2<CR>")
+-- nmap("<M-h>", ":vertical resize -2<CR>")
+-- nmap("<M-l>", ":vertical resize +2<CR>")
 
 -- nmap("<leader>wj", "<C-w>j")
 -- nmap("<leader>wk", "<C-w>k")
@@ -88,3 +104,5 @@ nmap("<leader>gb", ":Telescope git_branches<CR>")
 
 nmap("<leader>gl", ":Flogsplit<CR>")
 nmap("<leader>gg", ":G<CR>")
+
+nmap("<leader>ts", ":SymbolsOutline<CR>")

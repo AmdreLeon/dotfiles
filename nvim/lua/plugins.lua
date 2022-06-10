@@ -21,18 +21,15 @@ Plug 'folke/which-key.nvim' --TODO veresto
 Plug 'simrat39/symbols-outline.nvim'
 
 --Bufferline
-vim.cmd [[Plug 'akinsho/bufferline.nvim', { 'tag': 'v2.*' }]] --TODO veresto
+vim.cmd [[Plug 'akinsho/bufferline.nvim', { 'tag': 'v2.*' }]]
 
---Neo Tree TODO
-vim.cmd([[ Plug 'nvim-neo-tree/neo-tree.nvim' ]])
-Plug 'MunifTanjim/nui.nvim'
+Plug 'mrjones2014/smart-splits.nvim' -- Smart, directional Neovim split resizing and navigation.
+Plug 'nvim-neo-tree/neo-tree.nvim'
+Plug 'MunifTanjim/nui.nvim' -- UI Component Library for Neovim.
 --#endregion
 
 --surround
 Plug 'tpope/vim-surround' --TODO
-
-----tabular
---Plug 'godlygeek/tabular'
 
 Plug 'nvim-lua/plenary.nvim'
 -- Fzf and Telescope
@@ -55,7 +52,6 @@ Plug 'Yggdroot/indentLine'
 Plug 'nvim-lualine/lualine.nvim'			-- Global bar
 --Tabs
 
-
 --nerdTree
 Plug 'preservim/nerdtree'
 --"Autopairs
@@ -77,7 +73,7 @@ vim.cmd[[Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}]]
 Plug 'airblade/vim-gitgutter'
 
 Plug 'xiyaowong/nvim-cursorword' --" highlight current word
-Plug 'lukas-reineke/indent-blankline.nvim'
+Plug 'lukas-reineke/indent-blankline.nvim' --  This plugin adds indentation guides to all lines (including empty lines).
 
 -- Colors
 Plug 'norcalli/nvim-colorizer.lua'

@@ -1,10 +1,13 @@
 #  ------ programs  -------- # 
-sulper + F12
+super + F11
         Mechvibes
 
 super + c 
 		code 
 		
+super + alt + Return
+       kitty -e tmux  
+
 super + Return
 		kitty
 
@@ -137,9 +140,6 @@ super + {o,i}
 super + {_,shift + }{1-9,0}
 	bspc {desktop -f,node -d} '^{1-9,10}'
 #	bspc {desktop -f,node -d} focused:'^{1-9,10}'
-
-
-
 
 ##swap desktops
 super + ctrl + {1-9,0}

@@ -10,6 +10,7 @@ vim.cmd [[
     colorscheme base16-gruvbox-dark-hard
 ]]
 
+
 vim.g.gruvbox_material_palette = 'original'
 vim.g.gruvbox_material_enable_bold = 1
 vim.g.gruvbox_material_diagnostic_virtual_text = 'colored'
@@ -37,10 +38,10 @@ vim.opt.shiftwidth = 4
 vim.opt.number = true
 vim.opt.scrolloff = 8
 vim.opt.signcolumn = 'yes'
-vim.opt.ignorecase = true
 vim.opt.autoindent = true
 vim.opt.hidden = true
-
+vim.opt.smartcase = true
+vim.opt.ignorecase = true
 vim.opt.syntax = 'on'
 
 -- vim.opt.completeopt = "menu,menuone"
