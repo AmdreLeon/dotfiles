@@ -11,7 +11,6 @@ local Plug = vim.fn['plug#']
 vim.call('plug#begin', '~/.local/share/nvim/plugged')
 
 --#region testing
-
 --COments
 Plug 'folke/todo-comments.nvim'
 ----shows keymaps
@@ -26,6 +25,8 @@ vim.cmd [[Plug 'akinsho/bufferline.nvim', { 'tag': 'v2.*' }]]
 Plug 'mrjones2014/smart-splits.nvim' -- Smart, directional Neovim split resizing and navigation.
 Plug 'nvim-neo-tree/neo-tree.nvim'
 Plug 'MunifTanjim/nui.nvim' -- UI Component Library for Neovim.
+
+Plug 'is0n/jaq-nvim'
 --#endregion
 
 --surround

@@ -10,7 +10,6 @@
 
 vim.g.mapleader = ' '
 
-
 local function map(mode, shortcut, command)
     vim.api.nvim_set_keymap(mode, shortcut, command, { noremap = true })
 end
@@ -52,7 +51,7 @@ nmap("<leader>hh", ":set hlsearch!<CR>")
 -- nmap("<leader>n", ":NERDTreeFocus<CR>")
 
 -- Neo-tree
-map("n", "<F2>", "<cmd>Neotree toggle<cr>" )
+map("n", "<F2>", "<cmd>Neotree toggle<cr>")
 map("n", "<leader>n", "<cmd>Neotree focus<cr>")
 
 --Comments
@@ -102,7 +101,11 @@ nmap("<leader>fb", ":Telescope buffers<CR>")
 nmap("<leader>fh", ":Telescope help_tags<CR>")
 nmap("<leader>gb", ":Telescope git_branches<CR>")
 
-nmap("<leader>gl", ":Flogsplit<CR>")
+nmap("<leader>gt", ":G tree")
+nmap("<leader>gl", ":Flogsplit <CR>")
 nmap("<leader>gg", ":G<CR>")
 
-nmap("<leader>ts", ":SymbolsOutline<CR>")
+nmap("<leader>so", ":SymbolsOutline<CR>")
+
+nmap("<F5>", ":Jaq bang<CR>")
+nmap("<F6>", ":Jaq terminal<CR>")
