@@ -38,6 +38,7 @@ Plug 'nvim-telescope/telescope.nvim'
 Plug 'junegunn/fzf'
 
 --"Temas
+Plug 'dylanaraps/wal.vim'
 Plug  'joshdick/onedark.vim'
 vim.cmd [[Plug  'sonph/onehalf', {'rtp': 'vim'}]]
 Plug  'sainnhe/gruvbox-material'
